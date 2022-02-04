@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // permet de travailler en async
+  appStatus = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('stable'); // set appStatus à stable après 2 sec
+    }, 2000)
+  });
+
   servers = [
     {
       instanceType: 'medium',
